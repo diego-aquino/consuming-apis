@@ -5,6 +5,9 @@
   "repository": "https://github.com/diego-aquino/consuming-apis.git",
   "author": "diego-aquino <diego.cruz001@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "cors": "^2.8.5",
