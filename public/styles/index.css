@@ -1,0 +1,105 @@
+:root {
+    --primary-background-color: #FFFFFF;
+    --todo-background-color: #E6E6EA;
+    --todo-border-color: #C7C7CA;
+    --todo-shadow-color: #9c9c9c;
+    --completed-theme-color: #5EAA4F;
+    --in-progress-theme-color: #FED766;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-color: var(--primary-background-color);
+}
+
+main {
+    padding: 1rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.todo-card {
+    height: 10rem;
+    margin: 1rem;
+
+    padding: 1.4rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--todo-border-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: box-shadow 0.2s, transform 0.2s;
+
+    background-color: var(--todo-background-color);
+}
+
+.todo-card.template {
+    display: none;
+}
+
+.todo-card:hover {
+    transform: translateY(-3%);
+    box-shadow: 0 0.25rem 5px var(--todo-shadow-color);
+}
+
+.todo-card header,
+.todo-card footer {
+    display: flex;
+}
+
+.todo-card footer {
+    align-items: center;
+}
+
+.todo-card header {
+    justify-content: space-between;
+}
+
+.todo-card header .completion-icon {
+    margin-left: 1.5rem;
+    align-self: baseline;
+}
+
+.todo-card footer .user-profile-img {
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.todo-card footer p {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 799px) {
+    main {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1099px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1100px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1400px;
+    }
+}
